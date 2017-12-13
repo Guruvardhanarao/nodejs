@@ -2,16 +2,18 @@ var rect = require('./rect');
 
 function solveRect(l,b) {
     console.log("Entered length=" + l + ", bredth=" + b);
-    if(l <= 0 || b <= 0) {
-        console.log("please enter length and breadth greater than zero");
-    }
-
-    else {
-        console.log("Area-(l*b)=" + rect.area(l,b));
-        console.log("Perimeter-(2(l+b)=" + rect.perimeter(l,b));
-    }
+    rect(l, b, (err, rectangle) => {
+        if(err) {
+            console.log(err);
+        }
+        else {
+            console.log("Area of Rectangle = " + rectangle.area());
+            console.log('Perimeter of Rectangle = ' +rectangle.perimeter());
+        }
+    });
 }
 
 solveRect(2,4);
-solveRect(0,4);
-solveRect(-1,4);
+solveRect(0,6);
+solveRect(-2,6);
+solveRect(5,-6);
