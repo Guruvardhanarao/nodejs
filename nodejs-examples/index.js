@@ -1,7 +1,4 @@
-var rect = {
-    area: (a,b) => (a*b),
-    perimeter: (a,b) => (2*(a+b))
-};
+var rect = require('./rect');
 
 function solveRect(l,b) {
     console.log("Entered length=" + l + ", bredth=" + b);
